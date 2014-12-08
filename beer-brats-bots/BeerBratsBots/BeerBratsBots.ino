@@ -21,6 +21,7 @@ void loop(){
     while (softSerial.available()>0) {
       int motor1speed = softSerial.parseInt();
       int motor2speed = softSerial.parseInt();
+      motor1 = map(motor1, 0, 180, 180, 0);
       if(softSerial.read() =='\n'){
         motor1.write(motor1speed);
         motor2.write(motor2speed);
